@@ -382,6 +382,8 @@ writeboard BS
 writeenable''
 writemenu''
 wd 'setfocus board'
+glsel 'board'
+glpaint''
 )
 button_enable=: 3 : 0
 1 button_enable I.  y

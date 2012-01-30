@@ -150,6 +150,8 @@ writeboard BS
 writeenable''
 writemenu''
 wd 'setfocus board'
+glsel 'board'
+glpaint''
 )
 
 NB. =========================================================
