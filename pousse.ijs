@@ -303,12 +303,12 @@ rem form end;
 ps_run=: ''&$: : (4 : 0)
 ps=. PS rplc 'New_Game_Size';'New Game Size'
 wd ps
-wd 'pshow;'
 wd 'setfont log ',FIXFONT
 defbuttons''
 defgrid''
 writemenu''
 wd 'pas 0 0'
+wd 'pshow;'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
 ps_new_button''
@@ -410,8 +410,7 @@ wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
 defgrid=: 3 : 0
 j=. ';cc board isigraph'
 wd 'xywh ',(":(OFFX+WID),(OFFY+HITE),2#CELL*SIZE),j
-'x y'=. 2 * (OFFX+WID),(OFFY+HITE)
-'w h'=. _2{. 0 ". wd 'qchildxywhx board'
+'x y w h'=. 2 * ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 wd 'setxywhx board ',":x,y,2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
