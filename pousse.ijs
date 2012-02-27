@@ -1,11 +1,4 @@
-3 : 0''
-if. IFJ6 do.
-  require 'gl2 text'
-else.
-  require 'gui/gtkwd'
-end.
-''
-)
+require 'gtkwd gl2 text'
 
 coclass 'pousse'
 coinsert 'jgl2'
