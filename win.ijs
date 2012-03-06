@@ -46,10 +46,11 @@ defbuttons''
 defgrid''
 writemenu''
 wd 'pas 0 0'
-wd 'pshow;'
+wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
 ps_new_button''
+wd 'pshow;'
 )
 
 NB. =========================================================
