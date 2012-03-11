@@ -371,12 +371,12 @@ ps_sz6_button=: ps_boardsize bind 6
 ps_sz7_button=: ps_boardsize bind 7
 ps_sz8_button=: ps_boardsize bind 8
 psshow=: 3 : 0
+glsel 'board'
 writelog SEQ
 writeboard BS
 writeenable''
 writemenu''
 wd 'setfocus board'
-glsel 'board'
 glpaint''
 )
 button_enable=: 3 : 0

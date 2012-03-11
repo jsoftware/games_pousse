@@ -146,12 +146,12 @@ ps_sz8_button=: ps_boardsize bind 8
 
 NB. =========================================================
 psshow=: 3 : 0
+glsel 'board'
 writelog SEQ
 writeboard BS
 writeenable''
 writemenu''
 wd 'setfocus board'
-glsel 'board'
 glpaint''
 )
 
