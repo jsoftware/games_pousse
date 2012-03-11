@@ -468,7 +468,7 @@ BS=: (2#SIZE)$' '
 PRED=: 'X'
 run ":SIZE
 x ps_run''
-wdloop^:(-.IFJ6)''
+evtloop^:(-.IFJ6)''
 )
 ps_default=: 3 : 0
 if. -. systype-:'button' do. '' return. end.
