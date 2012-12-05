@@ -1,7 +1,8 @@
-require 'gtkwd gl2 text'
+require 'droidwd gtkwd gl2 text'
 
 coclass 'pousse'
-coinsert 'jgl2'
+coinsert 'jgl2 wdbase'
+droidwd_run=: pousse
 
 IFTEST=: 0
 
@@ -257,10 +258,11 @@ q=. (x ev2a i{y) i}p
 (*./_1e6>q){q,:p
 )
 
-info=: wdinfo @ ('Pousse'&;)
+info=: sminfo @ ('Pousse'&;)
 unwords=: ;: inverse
 OFFX=: 70
 OFFY=: 0
+BUTTONS=: 0$<''
 PS=: 0 : 0
 pc ps closeok nomax nosize;pn "Pousse";
 menupop "Options";
@@ -295,8 +297,10 @@ rem form end;
 )
 ps_run=: ''&$: : (4 : 0)
 ps=. PS rplc 'New_Game_Size';'New Game Size'
-wd ps
-wd 'setfont log ',FIXFONT
+if. 0=#BUTTONS do.
+  wd ps
+  wd 'setfont log ',FIXFONT
+end.
 defbuttons''
 defgrid''
 writemenu''
@@ -304,7 +308,14 @@ wd 'pas 0 0'
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
-ps_new_button''
+if. 'Android'-:UNAME do.
+  button_enable (4*SIZE)#1
+  IFGREENMOVE=: 0
+  SEQ=: ''
+  run ":SIZE
+else.
+  ps_new_button''
+end.
 wd 'pshow;'
 )
 ps_about_button=: 3 : 0
@@ -357,7 +368,12 @@ if. y=SIZE do.
   ps_new_button''
 else.
   pos=. wd 'qformx'
-  wd 'pclose'
+  if. 'Android'-:UNAME do.
+    wd 'rm board', , ';rm ',"1 >BUTTONS
+  else.
+    wd 'pclose'
+    BUTTONS=: 0$<''
+  end.
   pos pousse y
 end.
 )
@@ -380,8 +396,8 @@ wd 'setfocus board'
 glpaint''
 )
 button_enable=: 3 : 0
-1 button_enable I.  y
-0 button_enable I.  -.y
+1 button_enable I. y
+0 button_enable I. -.y
 :
 if. #y do.
   bn=. y{,BUTTONS
@@ -404,7 +420,7 @@ wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
 defgrid=: 3 : 0
 j=. ';cc board isigraph'
 wd 'xywh ',(":(OFFX+WID),(OFFY+HITE),2#CELL*SIZE),j
-'x y w h'=. 2 * ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+'x y w h'=. (2&*)`dpw2px_droidwd_@.('Android'-:UNAME) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 wd 'setxywhx board ',":x,y,2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
@@ -491,4 +507,4 @@ writeenable=: 3 : 0
 button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
 wd :: ] 'psel ps;pclose'
-pousse''
+pousse`start_droidwd@.('Android'-:UNAME) coname''

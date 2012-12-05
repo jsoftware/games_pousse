@@ -1,3 +1,3 @@
 
-info=: wdinfo @ ('Pousse'&;)
+info=: sminfo @ ('Pousse'&;)
 unwords=: ;: inverse
