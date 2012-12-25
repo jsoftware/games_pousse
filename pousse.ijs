@@ -367,7 +367,7 @@ ps_boardsize=: 3 : 0
 if. y=SIZE do.
   ps_new_button''
 else.
-  pos=. wd 'qformx'
+  pos=. wdqformx''
   if. 'Android'-:UNAME do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
@@ -469,6 +469,7 @@ end.
 res
 )
 pousse=: ''&$: : (4 : 0)
+if. 32= 3!:0 y do. y=. '' end.
 SIZE=: {.y,DEFSIZE
 if. IFWINCE do.
   WID=: 12

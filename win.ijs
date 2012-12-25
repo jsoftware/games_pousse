@@ -135,7 +135,7 @@ ps_boardsize=: 3 : 0
 if. y=SIZE do.
   ps_new_button''
 else.
-  pos=. wd 'qformx'
+  pos=. wdqformx''
   if. 'Android'-:UNAME do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
@@ -202,7 +202,7 @@ j=. ';cc board isigraph'
 wd 'xywh ',(":(OFFX+WID),(OFFY+HITE),2#CELL*SIZE),j
 NB. resize grid for even sized buttons:
 NB. TODO qchildxywhx not work
-NB. 'x y w h'=. 0 ". wd 'qchildxywhx board'
+NB. 'x y w h'=. wdqchildxywhx 'board'
 'x y w h'=. (2&*)`dpw2px_droidwd_@.('Android'-:UNAME) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 wd 'setxywhx board ',":x,y,2#CELL*SIZE
