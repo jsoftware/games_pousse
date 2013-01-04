@@ -408,14 +408,17 @@ end.
 )
 defbuttons=: 3 : 0
 BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
+if. IFQT do. wd 'bin vh' end.
 x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
 y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":WID,CELL),"1 j
+if. IFQT do. wd 'bin zh' end.
 x=. ": OFFX + ,. (,~) WID+CELL*i.SIZE
 y=. ": OFFY + ,. SIZE#0,HITE+CELL*SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 }. BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
+if. IFQT do. wd 'bin zz' end.
 )
 defgrid=: 3 : 0
 j=. ';cc board isigraph'
