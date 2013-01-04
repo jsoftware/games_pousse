@@ -264,7 +264,7 @@ OFFX=: 70
 OFFY=: 0
 BUTTONS=: 0$<''
 PS=: 0 : 0
-pc ps closeok nomax nosize;pn "Pousse";
+pc ps closeok nomax nosize qtwd;pn "Pousse";
 menupop "Options";
 menu new "&New Game" "Ctrl+N" "" "";
 menupop "New_Game_Size";
@@ -289,9 +289,12 @@ menu instructions "&Instructions" "" "" "";
 menusep ;
 menu about "&About" "" "" "";
 menupopz;
+bin hvh;
 xywh 5 5 23 9;cc s1 static;cn "Red";
 xywh 29 5 31 9;cc s2 static;cn "Green";
+bin z;
 xywh 4 14 51 60;cc log editm ws_vscroll es_readonly bottomscale;
+bin z;
 pas 0 0;
 rem form end;
 )
@@ -408,17 +411,17 @@ end.
 )
 defbuttons=: 3 : 0
 BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
-if. IFQT do. wd 'bin vh' end.
+wd 'bin vh'
 x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
 y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":WID,CELL),"1 j
-if. IFQT do. wd 'bin zh' end.
+wd 'bin zh'
 x=. ": OFFX + ,. (,~) WID+CELL*i.SIZE
 y=. ": OFFY + ,. SIZE#0,HITE+CELL*SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 }. BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
-if. IFQT do. wd 'bin zz' end.
+wd 'bin z'
 )
 defgrid=: 3 : 0
 j=. ';cc board isigraph'
