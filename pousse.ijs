@@ -304,8 +304,12 @@ if. 0=#BUTTONS do.
   wd ps
   wd 'setfont log ',FIXFONT
 end.
-defbuttons''
-defgrid''
+if. IFQT do.
+  defgridbuttons''
+else.
+  defbuttons''
+  defgrid''
+end.
 writemenu''
 wd 'pas 0 0'
 wd^:(-.IFJ6) 'pshow;pshow sw_hide'
@@ -411,17 +415,14 @@ end.
 )
 defbuttons=: 3 : 0
 BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
-wd 'bin vh'
 x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
 y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":WID,CELL),"1 j
-wd 'bin zh'
 x=. ": OFFX + ,. (,~) WID+CELL*i.SIZE
 y=. ": OFFY + ,. SIZE#0,HITE+CELL*SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 }. BUTTONS
 wd 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
-wd 'bin z'
 )
 defgrid=: 3 : 0
 j=. ';cc board isigraph'
@@ -429,6 +430,48 @@ wd 'xywh ',(":(OFFX+WID),(OFFY+HITE),2#CELL*SIZE),j
 'x y w h'=. (2&*)`dpw2px_droidwd_@.('Android'-:UNAME) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 wd 'setxywhx board ',":x,y,2#CELL*SIZE
+where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
+)
+defgridbuttons=: 3 : 0
+BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
+wd 'bin vh'
+x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
+y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
+j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
+
+p=. 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":WID,CELL),"1 j
+l=. SIZE{.p
+r=. SIZE}.p
+
+x=. ": OFFX + ,. (,~) WID+CELL*i.SIZE
+y=. ": OFFY + ,. SIZE#0,HITE+CELL*SIZE
+j=. (';cc '&,@ (,&' button')) &> ,2 }. BUTTONS
+
+p=. 'xywh ',"1 x,"1 ' ',"1 y,"1 (' ',":CELL,HITE),"1 j
+t=. SIZE{.p
+b=. SIZE}.p
+
+wd 'bin v'
+wd 'bin h'
+wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd t
+wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'bin z'
+wd 'bin hv'
+wd l
+wd 'bin sz'
+j=. ';cc board isigraph'
+wd 'wh ',(":2#2*CELL*SIZE),j
+wd 'bin v'
+wd r
+wd 'bin szz'
+wd 'bin h'
+wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd b
+wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'bin z'
+'x y w h'=. (2&*)`dpw2px_droidwd_@.('Android'-:UNAME) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+CELL=: <. SIZE %~ w <. h
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
 )
 writeboard=: 3 : 0
