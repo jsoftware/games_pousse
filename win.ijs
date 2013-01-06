@@ -244,17 +244,17 @@ wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin z'
 wd 'bin hv'
 wd l
-wd 'bin sz'
+wd 'bin z'
 j=. ';cc board isigraph'
 wd 'wh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
-wd 'bin szz'
+wd 'bin zz'
 wd 'bin h'
 wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
 wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
-wd 'bin z'
+wd 'bin zs'
 
 NB. resize grid for even sized buttons:
 NB. TODO qchildxywhx not work

@@ -459,17 +459,17 @@ wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin z'
 wd 'bin hv'
 wd l
-wd 'bin sz'
+wd 'bin z'
 j=. ';cc board isigraph'
 wd 'wh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
-wd 'bin szz'
+wd 'bin zz'
 wd 'bin h'
 wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
 wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
-wd 'bin z'
+wd 'bin zs'
 'x y w h'=. (2&*)`dpw2px_droidwd_@.('Android'-:UNAME) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
