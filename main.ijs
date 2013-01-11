@@ -64,5 +64,5 @@ button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
 
 NB. =========================================================
-wd :: ] 'psel ps;pclose'
+wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
 pousse`start_droidwd@.('Android'-:UNAME) coname''

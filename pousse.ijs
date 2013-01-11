@@ -556,5 +556,5 @@ if. done '' do. return. end.
 writeenable=: 3 : 0
 button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
-wd :: ] 'psel ps;pclose'
+wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
 pousse`start_droidwd@.('Android'-:UNAME) coname''
