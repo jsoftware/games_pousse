@@ -56,7 +56,7 @@ else.
 end.
 writemenu''
 wd 'pas 0 0'
-wd^:(-.IFJ6) 'pshow;pshow sw_hide'
+wd 'pshow;pshow sw_hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
 if. ('Android'-:UNAME)>IFQT do.

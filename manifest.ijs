@@ -6,9 +6,9 @@ DESCRIPTION=: 0 : 0
 pousse
 )
 
-VERSION=: '1.0.12'
+VERSION=: '1.0.13'
 
-RELEASE=: 'j602 j701'
+RELEASE=: 'j701 j801'
 
 FILES=: 0 : 0
 pousse.ijs
