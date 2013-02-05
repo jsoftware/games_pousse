@@ -1,4 +1,5 @@
-require 'droidwd gtkwd gl2 text'
+require 'droidwd gl2 text'
+require^:(-.IFJ6) ::0: 'gtkwd'
 
 coclass 'pousse'
 coinsert 'jgl2 wdbase'
@@ -408,9 +409,6 @@ button_enable=: 3 : 0
 :
 if. #y do.
   bn=. y{,BUTTONS
-  if. IFJAVA=0 do.
-    wd 'setenable '&, @ (,&(' ',(":x),' ')) &> bn
-  end.
 end.
 )
 defbuttons=: 3 : 0

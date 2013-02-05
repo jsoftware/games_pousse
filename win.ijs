@@ -184,9 +184,6 @@ button_enable=: 3 : 0
 :
 if. #y do.
   bn=. y{,BUTTONS
-  if. IFJAVA=0 do.
-    wd 'setenable '&, @ (,&(' ',(":x),' ')) &> bn
-  end.
 end.
 )
 

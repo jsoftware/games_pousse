@@ -1,6 +1,7 @@
 NB. init for pousse
 
-require 'droidwd gtkwd gl2 text'
+require 'droidwd gl2 text'
+require^:(-.IFJ6) ::0: 'gtkwd'
 
 coclass 'pousse'
 coinsert 'jgl2 wdbase'
