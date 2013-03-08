@@ -6,7 +6,7 @@ BUTTONS=: 0$<''
 
 NB. =========================================================
 PS=: 0 : 0
-pc ps closeok nomax nosize qtwd;pn "Pousse";
+pc ps closeok nomax nosize;pn "Pousse";
 menupop "Options";
 menu new "&New Game" "Ctrl+N" "" "";
 menupop "New_Game_Size";
