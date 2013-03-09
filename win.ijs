@@ -32,10 +32,10 @@ menusep ;
 menu about "&About" "" "" "";
 menupopz;
 bin hvh;
-xywh 5 5 23 9;cc s1 static;cn "Red";
-xywh 29 5 31 9;cc s2 static;cn "Green";
+cc s1 static;cn "Red";
+cc s2 static;cn "Green";
 bin z;
-xywh 4 14 51 60;cc log editm ws_vscroll es_readonly bottomscale;
+wh 102 120;cc log editm readonly;
 bin z;
 pas 0 0;
 rem form end;
@@ -281,21 +281,21 @@ glrect y NB. ,2#<.CELL%4
 
 NB. =========================================================
 writemenu=: 3 : 0
-wd 'set auto ',":IFAUTO
-wd 'set two ',":IFTWO
-wd 'setenable auto ',":IFTWO=0
+wd 'set auto checked ',":IFAUTO
+wd 'set two checked ',":IFTWO
+wd 'set auto enable ',":IFTWO=0
 )
 
 NB. =========================================================
 writelog=: 3 : 0
 if. 0 e. #y do.
-  wd 'set log'
+  wd 'set log text '
 else.
   seq=. ;: y
   rws=. >. -: #seq
   seq=. _2 [\ (rws*2) {. seq
   txt=. LF ,. (>{."1 seq) ,. '  ' ,"1 >{:"1 seq
-  wd 'set log *', log=: }. ,txt
-  wd 'setscroll log ',":rws
+  wd 'set log text *', log=: }. ,txt
+  wd 'set log scroll ',":rws
 end.
 )

@@ -9,8 +9,8 @@ if. res do.
   button_enable (4*SIZE)#0
   name=. (cgreen>cred) pick 'Red';'Green'
   txt=. log ,LF, name,' wins'
-  wd 'set log *', txt
-  wd 'setscroll log ',": 1++/txt=LF
+  wd 'set log text *', txt
+  wd 'set log scroll ',": 1++/txt=LF
 end.
 res
 )
