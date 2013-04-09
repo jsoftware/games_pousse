@@ -311,7 +311,7 @@ wd 'pas 0 0'
 wd 'pshow;pshow sw_hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
-if. ('Android'-:UNAME)>IFQT do.
+if. IFJCDROID do.
   button_enable (4*SIZE)#1
   IFGREENMOVE=: 0
   SEQ=: ''
@@ -371,7 +371,7 @@ if. y=SIZE do.
   ps_new_button''
 else.
   pos=. wdqform''
-  if. ('Android'-:UNAME)>IFQT do.
+  if. IFJCDROID do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
     wd 'pclose'
@@ -444,7 +444,7 @@ wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
 wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
-'x y w h'=. (2&*)`dpw2px_droidwd_@.(('Android'-:UNAME)>IFQT) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
 )
@@ -531,4 +531,4 @@ writeenable=: 3 : 0
 button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
 wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
-pousse`start_droidwd@.(('Android'-:UNAME)>IFQT) coname''
+pousse`start_droidwd@.IFJCDROID coname''

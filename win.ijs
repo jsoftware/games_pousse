@@ -54,7 +54,7 @@ wd 'pas 0 0'
 wd 'pshow;pshow sw_hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
-if. ('Android'-:UNAME)>IFQT do.
+if. IFJCDROID do.
   button_enable (4*SIZE)#1
   IFGREENMOVE=: 0
   SEQ=: ''
@@ -138,7 +138,7 @@ if. y=SIZE do.
   ps_new_button''
 else.
   pos=. wdqform''
-  if. ('Android'-:UNAME)>IFQT do.
+  if. IFJCDROID do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
     wd 'pclose'
@@ -225,7 +225,7 @@ wd 'bin zs'
 NB. resize grid for even sized buttons:
 NB. TODO qchildxywh not work
 NB. 'x y w h'=. wdqchildxywh 'board'
-'x y w h'=. (2&*)`dpw2px_droidwd_@.(('Android'-:UNAME)>IFQT) ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
 NB. wd 'setxywhx board ',":x,y,2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
