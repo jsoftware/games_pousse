@@ -294,7 +294,7 @@ bin hvh;
 cc s1 static;cn "Red";
 cc s2 static;cn "Green";
 bin z;
-wh 102 120;cc log editm readonly;
+minwh 102 120;cc log editm readonly;
 bin z;
 pas 0 0;
 rem form end;
