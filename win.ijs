@@ -190,7 +190,7 @@ x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
 y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
 
-p=. 'wh ',"1 (' ',":2* WID,CELL),"1 j
+p=. 'minwh ',"1 (' ',":2* WID,CELL),"1 j
 l=. SIZE{.p
 r=. SIZE}.p
 
@@ -198,7 +198,7 @@ x=. ": OFFX + ,. (,~) WID+CELL*i.SIZE
 y=. ": OFFY + ,. SIZE#0,HITE+CELL*SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 }. BUTTONS
 
-p=. 'wh ',"1 (' ',":2* CELL,HITE),"1 j
+p=. 'minwh ',"1 (' ',":2* CELL,HITE),"1 j
 t=. SIZE{.p
 b=. SIZE}.p
 
