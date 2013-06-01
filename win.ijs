@@ -204,22 +204,22 @@ b=. SIZE}.p
 
 wd 'bin v'
 wd 'bin h'
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd t
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin z'
 wd 'bin hv'
 wd l
 wd 'bin z'
 j=. ';cc board isigraph'
-wd 'wh ',(":2#2*CELL*SIZE),j
+wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
 wd 'bin zz'
 wd 'bin h'
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
 
 NB. resize grid for even sized buttons:

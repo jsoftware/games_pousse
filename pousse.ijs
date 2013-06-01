@@ -427,22 +427,22 @@ b=. SIZE}.p
 
 wd 'bin v'
 wd 'bin h'
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd t
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin z'
 wd 'bin hv'
 wd l
 wd 'bin z'
 j=. ';cc board isigraph'
-wd 'wh ',(":2#2*CELL*SIZE),j
+wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
 wd 'bin zz'
 wd 'bin h'
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
-wd 'wh ',(":WID,CELL), ';cc dummy button;cn "  "'
+wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
 'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 CELL=: <. SIZE %~ w <. h
