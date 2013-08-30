@@ -434,7 +434,7 @@ wd 'bin z'
 wd 'bin hv'
 wd l
 wd 'bin z'
-j=. ';cc board isigraph'
+j=. ';cc board isigraph flush'
 wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
