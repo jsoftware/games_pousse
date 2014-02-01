@@ -19,15 +19,9 @@ NB. =========================================================
 pousse=: ''&$: : (4 : 0)
 if. 32= 3!:0 y do. y=. '' end.
 SIZE=: {.y,DEFSIZE
-if. IFWINCE do.
-  WID=: 12
-  HITE=: 12
-  CELL=: 16
-else.
-  WID=: 13
-  HITE=: 13
-  CELL=: 20
-end.
+WID=: 13
+HITE=: 13
+CELL=: 20
 SEQ=: ''
 BS=: (2#SIZE)$' '
 PRED=: 'X'
