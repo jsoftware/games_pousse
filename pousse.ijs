@@ -1,5 +1,4 @@
 require 'droidwd gl2 text'
-require^:(-.IFJ6) ::0: 'gtkwd'
 
 coclass 'pousse'
 coinsert 'jgl2 wdbase'
@@ -502,7 +501,6 @@ BS=: (2#SIZE)$' '
 PRED=: 'X'
 run ":SIZE
 x ps_run''
-evtloop''
 )
 ps_default=: 3 : 0
 if. -. systype-:'button' do. '' return. end.
