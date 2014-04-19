@@ -434,6 +434,7 @@ wd 'bin hv'
 wd l
 wd 'bin z'
 j=. ';cc board isigraph flush'
+smoutput CELL;SIZE
 wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
@@ -443,7 +444,11 @@ wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
 wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
-'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+if. IFJCDROID do.
+'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+else.
+'x y w h'=. 0 ". wd 'qchildxywh board'
+end.
 CELL=: <. SIZE %~ w <. h
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
 )

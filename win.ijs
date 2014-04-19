@@ -183,6 +183,8 @@ end.
 )
 
 NB. =========================================================
+NB. !!! this needs fixing to ensure board is a square and
+NB. buttons are sized and positioned..
 defgridbuttons=: 3 : 0
 BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
 wd 'bin vh'
@@ -212,6 +214,7 @@ wd 'bin hv'
 wd l
 wd 'bin z'
 j=. ';cc board isigraph flush'
+smoutput CELL;SIZE
 wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
@@ -223,9 +226,12 @@ wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
 
 NB. resize grid for even sized buttons:
-NB. TODO qchildxywh not work
-NB. 'x y w h'=. wdqchildxywh 'board'
-'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+NB. 'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+if. IFJCDROID do.
+  'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+else.
+  'x y w h'=. 0 ". wd 'qchildxywh board'
+end.
 CELL=: <. SIZE %~ w <. h
 NB. wd 'setxywhx board ',":x,y,2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
