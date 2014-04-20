@@ -445,9 +445,9 @@ wd b
 wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin zs'
 if. IFJCDROID do.
-'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
+  'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
 else.
-'x y w h'=. 0 ". wd 'qchildxywh board'
+  'x y w h'=. 0 ". wd 'qchildxywh board'
 end.
 CELL=: <. SIZE %~ w <. h
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
