@@ -241,7 +241,7 @@ NB. =========================================================
 writeboard=: 3 : 0
 y=. |:y
 glrgb 1{COLORS
-glpen 0 0
+glpen 0 1
 (0{COLORS) writecell where#~' '=,y
 ((2+PRED='X'){COLORS) writecell where#~'X'=,y
 ((2+PRED='O'){COLORS) writecell where#~'O'=,y
