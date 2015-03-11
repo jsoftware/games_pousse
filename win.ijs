@@ -6,7 +6,7 @@ BUTTONS=: 0$<''
 
 NB. =========================================================
 PS=: 0 : 0
-pc ps closeok nomax nosize;pn "Pousse";
+pc ps closeok nosize;pn "Pousse";
 menupop "Options";
 menu new "&New Game" "Ctrl+N" "" "";
 menupop "New_Game_Size";
@@ -51,7 +51,7 @@ end.
 defgridbuttons''
 writemenu''
 wd 'pas 0 0'
-wd 'pshow;pshow sw_hide'
+wd 'pshow hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
 if. IFJCDROID do.
