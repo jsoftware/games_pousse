@@ -149,7 +149,7 @@ end.
 )
 
 NB. =========================================================
-ps_board_paint=: 3 : 0
+ps_board_resize=: 3 : 0
 writeboard BS
 )
 
@@ -187,7 +187,8 @@ NB. !!! this needs fixing to ensure board is a square and
 NB. buttons are sized and positioned..
 defgridbuttons=: 3 : 0
 BUTTONS=: 'LRTB' ,each "0/ ":&.> >:i.SIZE
-wd 'bin vh'
+wd 'bin vg'
+wd 'grid size 3 3'
 x=. ": OFFX + ,. SIZE#0,WID+CELL*SIZE
 y=. ": OFFY + ,. HITE+CELL*(,~)i.SIZE
 j=. (';cc '&,@ (,&' button')) &> ,2 {.BUTTONS
@@ -204,26 +205,26 @@ p=. 'minwh ',"1 (' ',":2* CELL,HITE),"1 j
 t=. SIZE{.p
 b=. SIZE}.p
 
-wd 'bin v'
+wd 'minwh ',(":WID,CELL), ';bin hz'
 wd 'bin h'
-wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd t
-wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd 'bin z'
-wd 'bin hv'
+wd 'minwh ',(":WID,CELL), ';bin hz'
+wd 'bin v'
 wd l
 wd 'bin z'
-j=. ';cc board isigraph flush'
+j=. ';cc board isidraw'
 smoutput CELL;SIZE
 wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
-wd 'bin zz'
+wd 'bin z'
+wd 'minwh ',(":WID,CELL), ';bin hz'
 wd 'bin h'
-wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
 wd b
-wd 'minwh ',(":WID,CELL), ';cc dummy button;cn "  "'
-wd 'bin zs'
+wd 'bin z'
+wd 'minwh ',(":WID,CELL), ';bin hz'
+wd 'bin zszs'
 
 NB. resize grid for even sized buttons:
 NB. 'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
@@ -234,6 +235,7 @@ else.
 end.
 CELL=: <. SIZE %~ w <. h
 NB. wd 'setxywhx board ',":x,y,2#CELL*SIZE
+wd 'set board wh ',":2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
 )
 
