@@ -260,6 +260,20 @@ q=. (x ev2a i{y) i}p
 
 info=: sminfo @ ('Pousse'&;)
 unwords=: ;: inverse
+
+wdview=: 3 : 0
+'a b'=. _2{. boxopen y
+if. 2=#$b=. ":b do. b=. }.,LF,.b end.
+f=. 8 u: DEL&, @ (,&DEL) @ -.&(0 127{a.)
+wd 'pc wdvw owner escclose closeok;pn ',dquote a
+wd 'cc ted editm'
+wd 'set ted stylesheet *color:#00007f;background-color:#ffefd5'
+wd 'set ted text *',b
+wd 'bin zhs'
+wd 'pmove 100 10 700 500'
+wd 'pshow'
+wd 'set ted readonly 1'
+)
 OFFX=: 70
 OFFY=: 0
 BUTTONS=: 0$<''
@@ -321,7 +335,7 @@ end.
 wd 'pshow;'
 )
 ps_about_button=: 3 : 0
-'About' wdview '';(topara ABOUT);1
+wdview 'About';(topara ABOUT)
 )
 ps_auto_button=: 3 : 0
 IFAUTO=: -. IFAUTO
@@ -333,7 +347,7 @@ wd'pclose'
 )
 ps_exit_button=: ps_cancel=: ps_close
 ps_instructions_button=: 3 : 0
-'Instructions' wdview '';(topara INSTRUCTIONS);1
+wdview 'Instructions';(topara INSTRUCTIONS)
 )
 ps_board_mbldown=: 3 : 0
 if. IFGREENMOVE > IFTWO do. rungreen'' end.

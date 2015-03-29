@@ -67,7 +67,7 @@ wd 'pshow;'
 
 NB. =========================================================
 ps_about_button=: 3 : 0
-'About' wdview '';(topara ABOUT);1
+wdview 'About';(topara ABOUT)
 )
 
 NB. =========================================================
@@ -87,7 +87,7 @@ ps_exit_button=: ps_cancel=: ps_close
 
 NB. =========================================================
 ps_instructions_button=: 3 : 0
-'Instructions' wdview '';(topara INSTRUCTIONS);1
+wdview 'Instructions';(topara INSTRUCTIONS)
 )
 
 NB. =========================================================
