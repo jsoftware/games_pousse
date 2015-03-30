@@ -448,7 +448,6 @@ wd 'bin v'
 wd l
 wd 'bin z'
 j=. ';cc board isidraw'
-smoutput CELL;SIZE
 wd 'minwh ',(":2#2*CELL*SIZE),j
 wd 'bin v'
 wd r
