@@ -1,8 +1,7 @@
-require 'droidwd gl2 text'
+require 'gl2 text'
 
 coclass 'pousse'
-coinsert 'jgl2 wdbase'
-droidwd_run=: pousse
+coinsert 'jgl2'
 
 IFTEST=: 0
 
@@ -324,7 +323,7 @@ wd 'pas 0 0'
 wd 'pshow hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
-if. IFJCDROID do.
+if. IFJA do.
   button_enable (4*SIZE)#1
   IFGREENMOVE=: 0
   SEQ=: ''
@@ -384,7 +383,7 @@ if. y=SIZE do.
   ps_new_button''
 else.
   pos=. wdqform''
-  if. IFJCDROID do.
+  if. IFJA do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
     wd 'pclose'
@@ -458,11 +457,7 @@ wd b
 wd 'bin z'
 wd 'minwh ',(":WID,CELL), ';bin hz'
 wd 'bin zszs'
-if. IFJCDROID do.
-  'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
-else.
-  'x y w h'=. 0 ". wd 'qchildxywh board'
-end.
+'x y w h'=. 0 ". wd 'qchildxywh board'
 CELL=: <. SIZE %~ w <. h
 wd 'set board wh ',":2#CELL*SIZE
 where=: (4,~*:SIZE)$, ,&(2#CELL)"1 CELL*>{2#<i.SIZE
@@ -543,4 +538,4 @@ writeenable=: 3 : 0
 button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
 wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
-pousse`start_droidwd@.IFJCDROID coname''
+pousse ''

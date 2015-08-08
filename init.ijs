@@ -1,10 +1,9 @@
 NB. init for pousse
 
-require 'droidwd gl2 text'
+require 'gl2 text'
 
 coclass 'pousse'
-coinsert 'jgl2 wdbase'
-droidwd_run=: pousse
+coinsert 'jgl2'
 
 IFTEST=: 0
 

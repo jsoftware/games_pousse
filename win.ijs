@@ -54,7 +54,7 @@ wd 'pas 0 0'
 wd 'pshow hide'
 if. #x do. wdcenter x
 else. wd 'pcenter' end.
-if. IFJCDROID do.
+if. IFJA do.
   button_enable (4*SIZE)#1
   IFGREENMOVE=: 0
   SEQ=: ''
@@ -138,7 +138,7 @@ if. y=SIZE do.
   ps_new_button''
 else.
   pos=. wdqform''
-  if. IFJCDROID do.
+  if. IFJA do.
     wd 'rm board', , ';rm ',"1 >BUTTONS
   else.
     wd 'pclose'
@@ -226,12 +226,7 @@ wd 'minwh ',(":WID,CELL), ';bin hz'
 wd 'bin zszs'
 
 NB. resize grid for even sized buttons:
-NB. 'x y w h'=. (2&*)`dpw2px_droidwd_@.IFJCDROID ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
-if. IFJCDROID do.
-  'x y w h'=. dpw2px_droidwd_ ((OFFX+WID),(OFFY+HITE),2#CELL*SIZE)
-else.
-  'x y w h'=. 0 ". wd 'qchildxywh board'
-end.
+'x y w h'=. 0 ". wd 'qchildxywh board'
 CELL=: <. SIZE %~ w <. h
 NB. wd 'setxywhx board ',":x,y,2#CELL*SIZE
 wd 'set board wh ',":2#CELL*SIZE
