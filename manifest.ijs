@@ -6,9 +6,9 @@ DESCRIPTION=: 0 : 0
 pousse
 )
 
-VERSION=: '1.0.35'
+VERSION=: '1.0.36'
 
-RELEASE=: 'j804 j805'
+RELEASE=: 'j804 j805 j806'
 
 DEPENDS=: 0 : 0
 graphics/gl2
