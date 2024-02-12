@@ -537,5 +537,5 @@ if. done '' do. return. end.
 writeenable=: 3 : 0
 button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
-wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
+wd^:(-.IFJA) :: ] 'psel ps;pclose'
 pousse ''

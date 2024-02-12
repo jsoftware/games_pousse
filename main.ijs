@@ -57,5 +57,5 @@ button_enable -.| (IFGREENMOVE{PRED,PGREEN) evrepeat allm
 )
 
 NB. =========================================================
-wd^:('Android'-.@-:UNAME) :: ] 'psel ps;pclose'
+wd^:(-.IFJA) :: ] 'psel ps;pclose'
 pousse ''
